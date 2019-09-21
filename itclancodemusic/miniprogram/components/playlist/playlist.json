@@ -1,6 +1,6 @@
 {
+  "component": true,
   "usingComponents": {
     "c-playlist": "/components/playlist/playlist"
-  },
-  "navigationBarTitleText": "云音乐"
+  }
 }
