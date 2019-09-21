@@ -7,11 +7,10 @@
 加一个中括号
    用['playlist.playCount'](val)
 对象外面要加上一个引号
-```
 ['playlist.playCount'](val){
     console.log(val);
 }
-```
+
 格式化数字的方法应该定义在methods里面,当前格式化数字的方法相当于是只在当前组件进行使用,在js当中是没有私有方法这个概念的
 对于这种私有的方法,习惯用下划线_tranNumber
 ```
