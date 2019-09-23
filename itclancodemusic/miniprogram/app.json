@@ -2,7 +2,10 @@
   "pages": [
     "pages/pagelist/pagelist",
     "pages/blog/blog",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/demotest/demotest"
+    
+   
   ],
   "window": {
     "backgroundColor": "#d81e06",
