@@ -1,6 +1,7 @@
 {
-  "usingComponents": {},
-  "navigationBarBackgroundColor": "#d81e06",
-  "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "云音乐"
+  "usingComponents": {
+    "c-playlist": "/components/playlist/playlist"
+  },
+  "navigationBarTitleText": "云音乐",
+  "enablePullDownRefresh": true
 }
