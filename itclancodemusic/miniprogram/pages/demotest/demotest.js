@@ -131,7 +131,12 @@ Page({
     // console.log(this.foo());
     // this.timeout();
     this.foo();
-   
+    let num1 = 1000;
+    let num2 = 150000;
+    let num3 = 2500000000;
+    console.log(this.tranNumber(1000, 2));
+    console.log(this.tranNumber(150000, 2));
+    console.log(this.tranNumber(2500000000000000000000000, 2));
   },
 
   async foo(){
@@ -220,6 +225,24 @@ Page({
     }).then((res) => {
       console.log(res);
     })
+  },
+
+  tranNumber(num, point) {
+    // 将数字转换为字符串,然后通过split方法用.分隔,取到第0个
+    let numStr = num.toString().split('.')[0]
+    if (numStr.length < 6) { // 判断数字有多长,如果小于6,,表示10万以内的数字,让其直接显示
+      console.log(numStr);
+      return numStr;
+    } else if (numStr.length >= 6 && numStr.length <= 8) { // 如果数字大于6位,小于八位,让其数字后面加单位万
+      let decimal = numStr.substring(numStr.length - 4, numStr.length - 4 + point)
+      console.log(decimal);
+      // 由千位,百位组成的一个数字
+      return parseFloat(parseInt(num / 10000) + '.' + decimal) + '万'
+    } else if (numStr.length > 8) {
+      let decimal = numStr.substring(numStr.length - 8, numStr.length - 8 + point);
+      console.log(decimal);
+      return parseFloat(parseInt(num / 100000000) + '.' + decimal) + '亿'
+    }
   }
 
 

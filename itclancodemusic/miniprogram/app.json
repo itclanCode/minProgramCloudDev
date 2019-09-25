@@ -3,7 +3,9 @@
     "pages/pagelist/pagelist",
     "pages/blog/blog",
     "pages/profile/profile",
-    "pages/demotest/demotest"
+    "pages/demotest/demotest",
+    "pages/musiclist/musiclist",
+    "pages/player/player"
     
    
   ],

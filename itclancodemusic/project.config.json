@@ -32,12 +32,41 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
 					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide"
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "musiclist",
+					"pathName": "pages/musiclist/musiclist",
+					"query": "playlistId=2808384996",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "demotest",
+					"pathName": "pages/demotest/demotest",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/pagelist/pagelist",
+					"pathName": "pages/pagelist/pagelist",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "musiclist",
+					"pathName": "pages/musiclist/musiclist",
+					"query": "playlistId=83105064",
+					"scene": null
 				}
 			]
 		}
