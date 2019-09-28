@@ -3,7 +3,7 @@ let musiclist = []
 let nowPlayingIndex = 0
 // 获取全局唯一的背景音频管理器
 const backgroundAudioManager = wx.getBackgroundAudioManager()
-const app = getApp()
+const app = getApp()  // 获取到app
 Page({
 
   /**
@@ -81,7 +81,7 @@ Page({
         backgroundAudioManager.epname = music.al.name
 
         // 保存播放历史
-        this.savePlayHistory()
+        // this.savePlayHistory()
       }
 
       this.setData({
@@ -137,7 +137,7 @@ Page({
     }
     this._loadMusicDetail(musiclist[nowPlayingIndex].id)
   },
-
+  // 歌词是否显示
   onChangeLyricShow() {
     this.setData({
       isLyricShow: !this.data.isLyricShow
@@ -164,6 +164,7 @@ Page({
     //  当前正在播放的歌曲
     const music = musiclist[nowPlayingIndex]
     const openid = app.globalData.openid
+    console.log("openid", openid);
     const history = wx.getStorageSync(openid)
     let bHave = false
     for (let i = 0, len = history.length; i < len; i++) {

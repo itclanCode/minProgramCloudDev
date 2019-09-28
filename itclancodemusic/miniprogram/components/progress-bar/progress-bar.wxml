@@ -7,6 +7,7 @@
         <!-- 可移动视图的容器 -->
         <movable-view direction="horizontal" class="movable-view" damping="1000" x="{{movableDis}}" bindchange="onChange" bindtouchend="onTouchEnd" />
     </movable-area>
+    <!-- 进度 -->
     <progress stroke-width="4" backgroundColor="#969696" activeColor="#fff" percent="{{progress}}"></progress>
   </view>
   <!-- 结束时间 -->

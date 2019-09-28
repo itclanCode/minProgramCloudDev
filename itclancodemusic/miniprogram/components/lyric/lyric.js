@@ -11,7 +11,7 @@ Component({
     },
     lyric: String,
   },
-
+  // 属性监听器
   observers: {
     lyric(lrc) {
       if (lrc == '暂无歌词') {

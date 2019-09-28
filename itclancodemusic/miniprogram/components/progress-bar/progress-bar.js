@@ -3,7 +3,7 @@ let movableViewWidth = 0;
 // 取得微信背景音乐管理器
 const backgroundAudioManager = wx.getBackgroundAudioManager()
 let currentSec = -1 // 当前的秒数
-let duration = 0 // 当前歌曲的总时长，以秒为单位
+let duration = 0 // 当前歌曲的总时长，以秒为单位,参与我们的计算当中去的
 let isMoving = false // 表示当前进度条是否在拖拽，解决：当进度条拖动时候和updatetime事件有冲突的问题
 
 Component({
@@ -46,7 +46,7 @@ Component({
     // 拖动滑动按钮的时候
     onChange(event) {
       // console.log(event)
-      // 拖动
+      // 拖动产生的效果
       if (event.detail.source == 'touch') {
         this.data.progress = event.detail.x / (movableAreaWidth - movableViewWidth) * 100
         this.data.movableDis = event.detail.x
@@ -54,6 +54,7 @@ Component({
         // console.log('change', isMoving)
       }
     },
+
     onTouchEnd() {
       const currentTimeFmt = this._dateFormat(Math.floor(backgroundAudioManager.currentTime))
       this.setData({
@@ -102,7 +103,7 @@ Component({
       backgroundAudioManager.onCanplay(() => {
         console.log('onCanplay')
         // console.log(backgroundAudioManager.duration)
-        if (typeof backgroundAudioManager.duration != 'undefined') {
+        if (typeof backgroundAudioManager.duration != 'undefined'){
           this._setTime()
         } else {
           setTimeout(() => {
@@ -110,12 +111,12 @@ Component({
           }, 1000)
         }
       })
-      // 进度条进度更新
+      // 进度条进度更新,只有小程序前台的时候才会触发
       backgroundAudioManager.onTimeUpdate(() => {
         // console.log('onTimeUpdate')
         if (!isMoving) {
           const currentTime = backgroundAudioManager.currentTime;
-          // 播放的总时常
+          // 音乐播放的总时长
           const duration = backgroundAudioManager.duration;
           const sec = currentTime.toString().split('.')[0];
           if (sec != currentSec) {
@@ -134,12 +135,13 @@ Component({
           }
         }
       })
-
+      // 播放音乐完成以后会触发,当播放当前歌曲时,需要自动的播放下一曲
       backgroundAudioManager.onEnded(() => {
         console.log("onEnded")
+        // 调用父组件的事件,子组件调用父组件的事件，自定义一个事件
         this.triggerEvent('musicEnd')
       })
-
+      // 当背景音乐出现播放错误的时候,会进入这个事件
       backgroundAudioManager.onError((res) => {
         console.error(res.errMsg)
         console.error(res.errCode)
