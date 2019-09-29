@@ -25,12 +25,27 @@ exports.main = async (event, context) => {
 
  });
 
+// 音乐列表接口
  app.router('musiclist', async(ctx, next) => {
   ctx.body =  await rp(BASE_URL+'/playlist/detail?id='+parseInt(event.playlistId))
     .then((res) => {
       return JSON.parse(res)
     })  
  })
+
+// 播放音乐地止
+app.router('musicUrl', async(ctx,next)=> {
+  ctx.body = await rp(BASE_URL+`/song/url?id=${event.musicId}`).then((res) => {
+      return res;
+  })
+})
+
+// 歌词接口
+app.router('lyric', async (ctx, next) => {
+    ctx.body = await rp(BASE_URL + `/lyric?id=${event.musicId}`).then((res) => {
+      return res
+    })
+  })
 
 return app.serve();
 
