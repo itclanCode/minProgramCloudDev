@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    modalShow: false
   },
 
   /**
@@ -62,5 +62,48 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  // 发布功能
+  onPublish(){
+  // 如果它返回true，说明已经授权,希望获取到用户的头像和昵称,在发布博客的时候,需要记录用户的昵称
+    // this.setData({
+    //   modalShow: true
+    // })
+    // 判断用户是否授权
+   wx.getSetting({
+     success:(res) =>{
+       console.log(res);
+       if(res.authSetting['scope.userInfo']){ 
+          wx.getUserInfo({
+            success:(res)=>{
+              console.log(res);
+              this.onLoginSuccess({
+                detail: res.userInfo
+              })
+            }
+          })
+       }else {
+         this.setData({
+           modalShow: true
+         })
+       }
+     }
+   })
+  },
+
+  onLoginSuccess(event){
+    console.log(event);
+    const detail = event.detail;
+    wx.navigateTo({
+      url: `../blog-edit/blog-edit?nickName=${detail.name}&avatarUrl=${detail.avatar}`,
+    })
+  },
+
+  onLoginFail(){
+    wx.showModal({
+      title: '授权的用户才能发布',
+      content: '',
+    })
   }
 })
