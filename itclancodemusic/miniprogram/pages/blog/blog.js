@@ -96,7 +96,7 @@ Page({
     console.log(event);
     const detail = event.detail;
     wx.navigateTo({
-      url: `../blog-edit/blog-edit?nickName=${detail.name}&avatarUrl=${detail.avatar}`,
+      url: `../blog-edit/blog-edit?nickName=${detail.name}&avatarUrl=${detail.avatarUrl}`,
     })
   },
 
