@@ -1,4 +1,3 @@
-/* components/login/login.wxss */
 .login {
   font-size: 32rpx;
   height: 80rpx;
