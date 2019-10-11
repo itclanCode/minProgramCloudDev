@@ -1,4 +1,3 @@
-/* pages/blog/blog.wxss */
 .header {
   display: flex;
   align-items: center;

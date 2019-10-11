@@ -1,5 +1,5 @@
-<!--pages/blog/blog.wxml-->
- <!-- 头部 -->
+<view class="container">
+  <!-- 头部 -->
   <view class="header">
     <view class="publish-container" bind:tap="onPublish">
       <i class="iconfont icon-fabu"></i>
@@ -21,8 +21,7 @@
 
 
   <!-- 底部弹出层 -->
-  <!-- <c-bottom-modal modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail">
-  </c-bottom-modal> -->
-
   <c-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail">
+
   </c-login>
+</view>

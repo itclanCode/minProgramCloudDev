@@ -1,4 +1,3 @@
-<!--components/bottom-modal/bottom-modal.wxml-->
 <view class="modal" hidden="{{!modalShow}}">
   <view class="panel">
       <i class="iconfont icon-shanchu" bind:tap="onClose"></i>
