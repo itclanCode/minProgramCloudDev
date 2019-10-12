@@ -81,7 +81,7 @@ Page({
         backgroundAudioManager.epname = music.al.name
 
         // 保存播放历史
-        // this.savePlayHistory()
+        this.savePlayHistory()
       }
 
       this.setData({
@@ -165,8 +165,9 @@ Page({
     const music = musiclist[nowPlayingIndex]
     const openid = app.globalData.openid
     console.log("openid", openid);
-    const history = wx.getStorageSync(openid)
-    let bHave = false
+    const history = wx.getStorageSync(openid) // 取openid
+    let bHave = false // 表示当前歌曲是否存在，初始值为false
+    // 循环遍历数组
     for (let i = 0, len = history.length; i < len; i++) {
       if (history[i].id == music.id) {
         bHave = true
@@ -175,6 +176,7 @@ Page({
     }
     if (!bHave) {
       history.unshift(music)
+      // 写入到历史存储中
       wx.setStorage({
         key: openid,
         data: history,

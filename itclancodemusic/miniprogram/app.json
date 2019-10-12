@@ -7,7 +7,10 @@
     "pages/musiclist/musiclist",
     "pages/player/player",
     "pages/blog-edit/blog-edit",
-    "pages/blog-comment/blog-comment"
+    "pages/blog-comment/blog-comment",
+    "pages/profile-playhistory/profile-playhistory",
+    "pages/profile-bloghistory/profile-bloghistory",
+    "pages/developer-message/developer-message"
     
    
   ],
@@ -21,7 +24,7 @@
     "selectedColor": "#d81e06",
     "list": [{
       "pagePath": "pages/pagelist/pagelist",
-      "text": "云音乐",
+      "text": "清音乐",
       "iconPath": "images/music.png",
       "selectedIconPath": "images/music-active.png"
     },{
@@ -40,5 +43,8 @@
   "requiredBackgroundModes": [
     "audio",
     "location"
+  ],
+  "navigateToMiniProgramAppIdList": [
+    "wx18a2ac992306a5a4"
   ]
 }

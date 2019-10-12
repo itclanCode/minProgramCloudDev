@@ -32,7 +32,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": 10,
 			"list": [
 				{
 					"id": -1,
@@ -94,6 +94,19 @@
 					"name": "blog-edit",
 					"pathName": "pages/blog-edit/blog-edit",
 					"query": "nickName=随笔川迹",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/profile/profile",
+					"pathName": "pages/profile/profile",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/developer-message/developer-message",
+					"pathName": "pages/developer-message/developer-message",
 					"scene": null
 				}
 			]

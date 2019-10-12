@@ -19,6 +19,7 @@ App({
       playingMusicId: -1,
       openid: -1,
     }
+    this.getOpenid();
   },
   // 设置Id
   setPlayMusicId(musicId) {
@@ -28,4 +29,18 @@ App({
   getPlayMusicId() {
     return this.globalData.playingMusicId
   },
+
+  getOpenid(){
+    wx.cloud.callFunction({
+      name: 'login'
+    }).then(res => {
+      const openid = res.result.openid
+      this.globalData.openid = openid
+      //  存储到本地存储
+      if(wx.getStorageSync(openid)== ''){
+         wx.setStorageSync(openid, [])
+      }
+     
+    })
+  }
 })
