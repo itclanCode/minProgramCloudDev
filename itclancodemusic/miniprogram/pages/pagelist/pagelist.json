@@ -2,6 +2,6 @@
   "usingComponents": {
     "c-playlist": "/components/playlist/playlist"
   },
-  "navigationBarTitleText": "云音乐",
+  "navigationBarTitleText": "余音漫漫",
   "enablePullDownRefresh": true
 }

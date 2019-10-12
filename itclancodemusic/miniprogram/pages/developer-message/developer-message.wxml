@@ -1,0 +1,21 @@
+<!--pages/developer-message/developer-message.wxml-->
+<view>
+     <view class="content">
+        <i class="iconfont icon-kaifazhe"></i>
+        <text class="text">开发者:</text>
+        <text>随笔川迹</text>
+      </view>
+     <view class="content">
+         <icon class="iconfont icon-weixin-copy"></icon>
+         <text selectable="true">微信ID:suibichuanji</text>
+     </view>
+     <view class="content">
+       <icon class="iconfont icon-weixingongzhonghao"></icon>
+       <text selectable="true">微信公众号:itclanCoder</text>
+     </view>
+     <view class="content">
+         <view bindtap="goGeiZan">
+             <icon class="iconfont icon-haopingguli"></icon>
+         </view>  
+     </view>
+</view>
