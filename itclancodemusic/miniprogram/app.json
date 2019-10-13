@@ -24,7 +24,7 @@
     "selectedColor": "#d81e06",
     "list": [{
       "pagePath": "pages/pagelist/pagelist",
-      "text": "清音乐",
+      "text": "听音乐",
       "iconPath": "images/music.png",
       "selectedIconPath": "images/music-active.png"
     },{

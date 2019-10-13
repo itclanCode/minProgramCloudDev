@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    qrcodeImg: ["/images/itclancoder.jpg"]
   },
   
   // 跳转给赞小程序
@@ -74,5 +74,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  onPrevImg(event){
+    wx.previewImage({
+      urls: this.data.qrcodeImg,
+      current: event.target.dataset.qrcodeImg
+    })
   }
 })

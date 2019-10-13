@@ -1,5 +1,6 @@
 <!--pages/developer-message/developer-message.wxml-->
 <view>
+     <view class="top-banner"></view>
      <view class="content">
         <i class="iconfont icon-kaifazhe"></i>
         <text class="text">开发者:</text>
@@ -12,6 +13,11 @@
      <view class="content">
        <icon class="iconfont icon-weixingongzhonghao"></icon>
        <text selectable="true">微信公众号:itclanCoder</text>
+     </view>
+     <view class="content qrcode-content">
+            <view><image class="qrcode-img" src="{{qrcodeImg}}" bind:tap="onPrevImg" data-qrcodeImg="{{qrcodeImg}}"></image></view>
+            <view><text>点击图片扫码识别</text></view>
+            <view><text selectable="true">关注微信itclanCoder公众号</text></view>
      </view>
      <view class="content">
          <view bindtap="goGeiZan">
