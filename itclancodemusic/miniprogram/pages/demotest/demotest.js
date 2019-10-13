@@ -243,6 +243,18 @@ Page({
       console.log(decimal);
       return parseFloat(parseInt(num / 100000000) + '.' + decimal) + '亿'
     }
+  },
+
+  onGetUserInfo(event){
+    console.log(event);
+  },
+
+  getOpenId(){
+    wx.cloud.callFunction({
+      name: 'login'
+    }).then(res => {
+      console.log(res);
+    })
   }
 
 
