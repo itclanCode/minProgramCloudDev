@@ -33,7 +33,7 @@ Component({
   observers: {
     ['blog.createTime'](val) {
       if (val) {
-        // console.log(val)
+        console.log(val)
         this.setData({
           _createTime: formatTime(new Date(val))
         })
